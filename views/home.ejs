@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+
+<body>
+    <div><a href="/publish">发表留言</a></div>
+    <% if(messages.length===0){%>
+    <p>当前暂无留言</p>
+    <% } else {%>
+    <table>
+        <tr>
+            <th>留言时间</th>
+            <th>留言内容</th>
+            <th>留言人</th>
+        </tr>
+        <% messages.forEach(message => {%>
+        <tr>
+            <td><%= message.date %></td>
+            <td><%= message.content %></td>
+            <td><%= message.name %></td>
+        </tr>
+    </table>
+    <%})%>
+    <% } %>
+</body>
+
+</html>
